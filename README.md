@@ -27,5 +27,11 @@
 membuat column class id  
 ### $table->foreign('class_id')->references('id')->on('class'); 
 mengisi user id dengan referensi id dari table class
-## MVC
-### 
+# MVC
+## MODEL
+### Membuat Model = php artisan make:model Student
+
+## CONTROLLER
+### php artisan make:controller StudentContoller
+
+### Membuat Route Controller
