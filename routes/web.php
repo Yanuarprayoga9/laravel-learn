@@ -1,8 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ExampleController;
-
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +12,7 @@ use App\Http\Controllers\ExampleController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/', [StudentController::class, 'index']);
 Route::prefix('user')->group(function () {
     Route::get('/', function () {
         return view('user.welcome', ['name' => 'yanuar', 'role' => 'admin']);
