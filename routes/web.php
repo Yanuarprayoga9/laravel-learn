@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ExampleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::prefix('user')->group(function () {
+    Route::get('/', function () {
+        return view('user.welcome', ['name' => 'yanuar', 'role' => 'admin']);
+    });
+    Route::get('/about/{id}', function ($id) {
+        return view('user.about',['id'=>$id]);
+    });
 });
-Route::get('/helloworld',function(){
-    return view('hello-world');
-});
-Route::view('/contact','contact',['name'=>'yanuar']);
