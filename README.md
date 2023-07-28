@@ -11,7 +11,7 @@
 ### php artisan migrate // php artisan migrate::fresh
 ### npm run dev
 ### php artisan serve
-
+### boostrap link vite  @vite(['resources/js/app.js', 'resources/css/app.scss'])
 
 # Belajar Laravel
 
@@ -35,3 +35,5 @@ mengisi user id dengan referensi id dari table class
 ### php artisan make:controller StudentContoller
 
 ### Membuat Route Controller
+### DB Query 
+### DB Seeders php artisan make:seeder ClassSeeder
