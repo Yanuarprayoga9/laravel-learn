@@ -12,7 +12,7 @@
 ### npm run dev
 ### php artisan serve
 ### boostrap link vite  @vite(['resources/js/app.js', 'resources/css/app.scss'])
-
+### php artisan db:seed --class-ClassSeeder
 # Belajar Laravel
 
 ## Routes 

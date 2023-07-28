@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\StudentController;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,13 +12,19 @@ use App\Http\Controllers\StudentController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-Route::get('/', [StudentController::class, 'index']);
-Route::prefix('user')->group(function () {
-    Route::get('/', function () {
-        return view('user.welcome', ['name' => 'yanuar', 'role' => 'admin']);
-    });
-    Route::get('/about/{id}', function ($id) {
-        return view('user.about',['id'=>$id]);
+// */
+
+Route::prefix('students')->group(function () {
+    Route::get('/', [StudentController::class, 'index']);
+    Route::get('/about', function () {
+        return view('students.about');
     });
 });
+
+Route::prefix('class')->group(function () {
+    Route::get('/', [ClassController::class, 'index']);
+    Route::get('/about', function () {
+        return view('class.about');
+    });
+});
+
