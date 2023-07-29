@@ -43,3 +43,13 @@ function up = $table->string('name')->unique->change();
 ### php artisan make:controller StudentContoller
 
 ### Membuat Route Controller
+
+
+## DB SEEDER
+### Tambah class
+php artisan make:seeder ClassSeeder
+ ClassRoom::insert([
+            'name'=>'yanuar prayoga'
+        ]);
+
+
