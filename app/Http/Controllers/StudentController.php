@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
     //
     public function index(){
-        var_dump('test');
-        return view('home');
+        $student = Student::all();
+        return view('student.welcome',['studentList'=>$student]);
     }
 }

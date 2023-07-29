@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    Home
-</body>
-</html>
+@extends('layouts.components.MainLayout');
+@section('title','Home');
+@section('content')
+<h1>ini adalah page home</h1>
+@endsection

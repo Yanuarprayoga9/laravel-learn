@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->unsignedBigInteger('class_id')->required();
-            $table->foreign('class_id')->references('id')->on('class');
+        Schema::table('class', function (Blueprint $table) {
+            $table->string('name')->unique()->change();
         });
     }
 
@@ -26,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('students', function (Blueprint $table) {
-            $table->dropColumn('class_id');
+        Schema::table('class', function (Blueprint $table) {
+            $table->dropUnique('class_name_unique');
         });
     }
 };
