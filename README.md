@@ -11,22 +11,30 @@
 ### php artisan migrate // php artisan migrate::fresh
 ### npm run dev
 ### php artisan serve
-### boostrap link vite  @vite(['resources/js/app.js', 'resources/css/app.scss'])
+
 
 # Belajar Laravel
 
-## Routes 
+## Routes
+
+
+### php artisan migrate:fresh
+### php artisan migrate:fresh --seed
 ## Migrate database
 1. create table php = artisan make:migration create_flights_table
 2. add column php = artisan make:migration add_column_to_students_table 
 3. The migrate:fresh command will drop all tables from the database and then execute the migrate command:
-### php artisan migrate:fresh
-### php artisan migrate:fresh --seed
-3. php artisan make:migration add_class_id_colum_to_students_table (membuat relasi id class ke tabel students )
+
+## RELASI DB
+php artisan make:migration add_class_id_colum_to_students_table (membuat relasi id class ke tabel students )
 ### $table->unsignedBigInteger('class_id')->required();
 membuat column class id  
 ### $table->foreign('class_id')->references('id')->on('class'); 
 mengisi user id dengan referensi id dari table class
+
+## memberi aturan unique
+function up = $table->string('name')->unique->change();
+         down = $table->dropUnique('class_name_unique');
 # MVC
 ## MODEL
 ### Membuat Model = php artisan make:model Student
@@ -35,5 +43,3 @@ mengisi user id dengan referensi id dari table class
 ### php artisan make:controller StudentContoller
 
 ### Membuat Route Controller
-### DB Query 
-### DB Seeders php artisan make:seeder ClassSeeder
