@@ -18,7 +18,7 @@
             <td>{{ $item['name'] }}</td>
             <td>{{ $item['nis'] }}</td>
             <td>{{ $item['gender'] }}</td>
-            <td>{{ $item['class'] }}</td>
+            <td>{{ $item['class_id'] }}</td>
         </tr>
         @endforeach
     </tbody>
