@@ -25,7 +25,7 @@
 2. add column php = artisan make:migration add_column_to_students_table 
 3. The migrate:fresh command will drop all tables from the database and then execute the migrate command:
 
-## RELASI DB
+## RELASI  DB
 php artisan make:migration add_class_id_colum_to_students_table (membuat relasi id class ke tabel students )
 ### $table->unsignedBigInteger('class_id')->required();
 membuat column class id  
