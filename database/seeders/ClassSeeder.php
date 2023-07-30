@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use App\Models\ClassRoom;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
+
 
 class ClassSeeder extends Seeder
 {
@@ -15,8 +17,19 @@ class ClassSeeder extends Seeder
      */
     public function run()
     {
-        ClassRoom::insert([
-            'name'=>'yanuar prayoga'
-        ]);
+        Schema::disableForeignKeyConstraints();
+        ClassRoom::truncate();
+        Schema::enableForeignKeyConstraints();
+        $data = [
+            ['name'=>'1 A'],
+            ['name'=>'1 B'],
+            ['name'=>'1 C'],
+            ['name'=>'1 D']
+        ];
+        foreach ($data as $value) {
+            ClassRoom::insert([
+                'name'=>$value['name']
+            ]);
+        }
     }
 }

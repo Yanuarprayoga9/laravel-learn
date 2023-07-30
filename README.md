@@ -51,5 +51,7 @@ php artisan make:seeder ClassSeeder
  ClassRoom::insert([
             'name'=>'yanuar prayoga'
         ]);
-
-
+### truncate db
+ Schema::disableForeignKeyConstraints();
+        Student::truncate();
+        Schema::enableForeignKeyConstraints();
