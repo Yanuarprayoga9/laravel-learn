@@ -15,9 +15,8 @@ use App\Http\Controllers\StudentController;
 */
 Route::prefix('student')->group(function () {
     Route::get('/',[StudentController::class,'index',]);
-    Route::get('/about', function () {
-        return view('student.about',);
-    });
+    Route::get('/about', [StudentController::class, 'about']);
+
 });
 Route::prefix('class')->group(function () {
     Route::get('/',[ClassController::class,'index',]);

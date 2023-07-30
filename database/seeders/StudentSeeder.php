@@ -32,7 +32,7 @@ class StudentSeeder extends Seeder
         //         'studentList'=>$item
         //     ]);
         // }
-        Student::factory()->create();
+        Student::factory()->count(20)->create();
 
     }
 }
