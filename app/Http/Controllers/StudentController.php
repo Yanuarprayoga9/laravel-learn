@@ -11,8 +11,20 @@ class StudentController extends Controller
     //
     public function index(){
         // $student = Student::all();
-        $student = DB::table('students')->get();
-        dd($student);
+        // DB::table('students')->insert([
+        //     'name'=>"query builder",
+        //     'gender'=>'Lk',
+        //     'nis' => '01023002',
+        //     'class_id'=>1
+        // ]);
+        Student::create([
+            'name' => 'eloquent',
+            'gender' => 'P',
+            'nis' => '0898012',
+            'class_id' => 2
+        ]);
+        // return $student;
+        // dd($student);
         // return view('student.welcome',['studentList'=>$student]);
     }
     public function about()
