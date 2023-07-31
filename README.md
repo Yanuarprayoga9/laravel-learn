@@ -59,7 +59,7 @@ php artisan make:seeder ClassSeeder
 php artisan make:factory ClassFactory --model=ClassRoom
 
 ### Eloquent 
-<!-- 
+
 // Retrieve all users
 $users = User::all();
 
