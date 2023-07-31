@@ -14,7 +14,7 @@ use App\Http\Controllers\StudentController;
 |
 */
 Route::prefix('student')->group(function () {
-    Route::get('/',[StudentController::class,'index',]);
+    Route::get('/',[StudentController::class,'index']);
     Route::get('/about', [StudentController::class, 'about']);
 
 });
@@ -24,3 +24,4 @@ Route::prefix('class')->group(function () {
         return view('student.about',);
     });
 });
+Route::get('/',[StudentController::class,'test']);
