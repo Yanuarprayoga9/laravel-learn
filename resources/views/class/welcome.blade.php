@@ -5,6 +5,7 @@
     <ol>
         @foreach ($class as $item)
             <li>{{ $item['name'] }}</li>
+            <li>{{ $item->student['name'] }}</li>
         @endforeach
     </ol>
 @endsection

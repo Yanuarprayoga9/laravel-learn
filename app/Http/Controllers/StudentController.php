@@ -12,26 +12,7 @@ class StudentController extends Controller
     //
     public function index()
     {
-        // $student = Student::all();
-        // DB::table('students')->insert([
-        //     'name'=>"query builder",
-        //     'gender'=>'Lk',
-        //     'nis' => '01023002',
-        //     'class_id'=>1
-        // ]);
-        // Student::create([
-        //     'name' => 'eloquent',
-        //     'gender' => 'P',
-        //     'nis' => '08980612',
-        //     'class_id' => 2
-        // ]);
-        // DB::table('students')
-        //     ->where('name', 'eloquent')
-        //     ->update([
-        //         'name'=>'eloquent update'
-        //     ]);
-        // return $student;
-        // dd($student);
+        
         $student = Student::all();
         return view('student.welcome',['studentList'=>$student]);
     }
