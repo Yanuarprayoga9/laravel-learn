@@ -8,6 +8,7 @@
             <th>nama</th>
             <th>Nis</th>
             <th>gender</th>
+            <th>Kelas id</th>
             <th>Kelas</th>
         </tr>
     </thead>
@@ -19,6 +20,7 @@
             <td>{{ $item['nis'] }}</td>
             <td>{{ $item['gender'] }}</td>
             <td>{{ $item['class_id'] }}</td>
+            <td>{{ $item->class['name'] }}</td>
         </tr>
         @endforeach
     </tbody>

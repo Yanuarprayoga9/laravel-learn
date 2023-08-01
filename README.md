@@ -60,7 +60,7 @@ php artisan make:factory ClassFactory --model=ClassRoom
 
 ### Eloquent 
 
-// Retrieve all users
+<!-- // Retrieve all users
 $users = User::all();
 
 // Find a user by ID
@@ -72,27 +72,38 @@ $newUser = User::create([
     'email' => 'john@example.com',
 ]);
 
-// Update a user's email
+ Update a user's email
 $user->update(['email' => 'newemail@example.com']);
 
-// Delete a user
-$user->delete(); -->
+Delete a user
+$user->delete(); --> -->
 
 ### query builder
-<!-- // Retrieve all users using Query Builder
+<!-- Retrieve all users using Query Builder
 $users = DB::table('users')->get();
 
-// Find a user by ID
+Find a user by ID
 $user = DB::table('users')->find(1);
 
-// Insert a new user into the 'users' table
+Insert a new user into the 'users' table
 DB::table('users')->insert([
     'name' => 'John Doe',
     'email' => 'john@example.com',
 ]);
 
-// Update a user's email
+Update a user's email
 DB::table('users')->where('id', 1)->update(['email' => 'newemail@example.com']);
 
-// Delete a user
-DB::table('users')->where('id', 1)->delete(); -->
+Delete a user
+DB::table('users')->where('id', 1)->delete();
+
+ -->
+
+
+### Query Join 
+lazy loading
+<!-- public function class(): BelongsTo
+    {
+        return $this->belongsTo(ClassRoom::class);
+    } -->
+eager loading
