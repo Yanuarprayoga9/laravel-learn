@@ -19,20 +19,21 @@ class StudentController extends Controller
         //     'nis' => '01023002',
         //     'class_id'=>1
         // ]);
-        Student::create([
-            'name' => 'eloquent',
-            'gender' => 'P',
-            'nis' => '08980612',
-            'class_id' => 2
-        ]);
-        DB::table('students')
-            ->where('name', 'eloquent')
-            ->update([
-                'name'=>'eloquent update'
-            ]);
+        // Student::create([
+        //     'name' => 'eloquent',
+        //     'gender' => 'P',
+        //     'nis' => '08980612',
+        //     'class_id' => 2
+        // ]);
+        // DB::table('students')
+        //     ->where('name', 'eloquent')
+        //     ->update([
+        //         'name'=>'eloquent update'
+        //     ]);
         // return $student;
         // dd($student);
-        // return view('student.welcome',['studentList'=>$student]);
+        $student = Student::all();
+        return view('student.welcome',['studentList'=>$student]);
     }
     public function about()
     {

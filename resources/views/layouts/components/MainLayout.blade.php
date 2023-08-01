@@ -24,10 +24,10 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about/">student</a>
+                        <a class="nav-link" href="student">student</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about/">class</a>
+                        <a class="nav-link" href="class">class</a>
                     </li>
 
 
