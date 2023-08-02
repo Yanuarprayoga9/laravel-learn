@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use Illuminate\Support\Arr;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\ClassRoom>
  */
@@ -16,9 +16,11 @@ class ClassFactory extends Factory
      */
     public function definition()
     {
-        $faker = \Faker\Factory::create();
+        \Faker\Factory::create();
         return [
             'name' => generateRandomValue(),
+            'student_id' => Arr::random([1,2]),
+
         ];
     }
 }
