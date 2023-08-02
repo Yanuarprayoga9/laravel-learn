@@ -103,3 +103,4 @@ DB::table('users')->where('id', 1)->delete();
 
 # many to many
 belongsto many
+test github issues
