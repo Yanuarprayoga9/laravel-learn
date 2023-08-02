@@ -12,6 +12,7 @@
 ### npm run dev
 ### php artisan serve
 
+# CATATAN PENAMAAN FILE
 
 # Belajar Laravel
 
@@ -100,10 +101,5 @@ DB::table('users')->where('id', 1)->delete();
  -->
 
 
-### Query Join 
-lazy loading
-<!-- public function class(): BelongsTo
-    {
-        return $this->belongsTo(ClassRoom::class);
-    } -->
-eager loading
+# many to many
+belongsto many

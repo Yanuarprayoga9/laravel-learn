@@ -13,20 +13,9 @@ class StudentController extends Controller
     public function index()
     {
         
-        $student = Student::all();
-        return view('student.welcome',['studentList'=>$student]);
+        $student = Student::with('class','extracurriculars')->get();
+        return view('student.student',['studentList'=>$student]);
     }
-    public function about()
-    {
-        return view('student.about');
-    }
-    public function test(){
-        $numbers = [2,5,3,4,2,8,6,0,8,10,5];
-        $count = collect($numbers)->map(function($item){
-            return $item*2;
-        });
-        return [
-            dd($count)
-        ];
-    }
+    
+  
 }
