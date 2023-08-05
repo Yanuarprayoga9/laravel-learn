@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ClassController;
 use App\Http\Controllers\ExtracurricularController;
+use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 
@@ -19,4 +20,5 @@ Route::prefix('student')->group(function () {
     Route::get('/student',[StudentController::class,'index']);
     Route::get('/class', [ClassController::class, 'index']);
     Route::get('/extra',[ExtracurricularController::class,'index']);
+    Route::get('/teacher',[TeacherController::class,'index']);
 });
