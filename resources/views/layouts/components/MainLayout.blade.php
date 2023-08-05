@@ -32,6 +32,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="extra">extra</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teacher">teacher</a>
+                    </li>
 
 
                 </ul>
