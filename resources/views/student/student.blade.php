@@ -11,6 +11,7 @@
             <th>Kelas id</th>
             <th>Kelas</th>
             <th>Extra</th>
+            <th>walikelas</th>
         </tr>
     </thead>
     <tbody>
@@ -27,6 +28,7 @@
                     {{ $extracurricular->name }} <br>
                 @endforeach    
             </td>
+            <td>{{ $item->class->homeroomTeacher->name }}</td>
         </tr>
         @endforeach
     </tbody>

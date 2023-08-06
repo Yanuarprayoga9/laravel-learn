@@ -9,6 +9,7 @@
                 <th>no</th>
                 <th>Kelas</th>
                 <th>nama</th>
+                <th>Homeroom</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,8 @@
                         {{ $student->name }},
                     @endforeach
                 </td>
+                <td>{{ $data->homeRoom['name'] }}</td>
+
         
             </tr>
             @endforeach
