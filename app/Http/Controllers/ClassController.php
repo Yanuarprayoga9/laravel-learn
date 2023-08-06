@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class ClassController extends Controller
 {
    public function index(){
-    $class = ClassRoom::with('students')->get();
+    $class = ClassRoom::with('students','homeroomTeacher')->get();
     return view('student.class',['class'=>$class]);
    }
 }
