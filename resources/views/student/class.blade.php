@@ -8,8 +8,8 @@
             <tr>
                 <th>no</th>
                 <th>Kelas</th>
-                <th>nama</th>
-                <th>Homeroom</th>
+                {{-- <th>nama</th>
+                <th>Homeroom</th> --}}
             </tr>
         </thead>
         <tbody>
@@ -17,12 +17,12 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $data['name'] }}</td>
-                <td>
+                {{-- <td>
                     @foreach ($data->students as $student)
                         {{ $student->name }},
                     @endforeach
-                </td>
-                <td>{{ $data->homeRoom['name'] }}</td>
+                </td> --}}
+                <td>{{ $data->homeroomTeacher['name'] }}</td>
 
         
             </tr>

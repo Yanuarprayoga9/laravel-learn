@@ -13,7 +13,8 @@ class StudentController extends Controller
     public function index()
     {
         
-        $student = Student::with('class.homeroomTeacher','extracurriculars')->get();
+        // $student = Student::with('class.homeroomTeacher','extracurriculars')->get();
+        $student = Student::get();
         return view('student.student',['studentList'=>$student]);
     }
     
