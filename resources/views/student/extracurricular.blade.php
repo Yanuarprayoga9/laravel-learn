@@ -1,14 +1,14 @@
 @extends('layouts.components.MainLayout')
-@section('title', 'class')
+@section('title', 'extra')
 @section('content')
-    <h1>ini adalah page class</h1>
+    <h1>ini adalah page extra</h1>
    
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>no</th>
                 <th>extra</th>
-                <th>anggota</th>
+                <th>details</th>
             </tr>
         </thead>
         <tbody>
@@ -17,9 +17,7 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $data->name }}</td>
                 <td>
-                    @foreach ( $data->students  as $data )
-                        -{{ $data->name }}<br>
-                    @endforeach
+                   <a href="extra/{{ $data->id }}">details</a>
                 </td>
         
             </tr>

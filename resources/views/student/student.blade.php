@@ -1,4 +1,5 @@
-@extends('layouts.components.MainLayout')
+@extends('layouts.components.Details')
+@section('detail', 'Student')
 @section('title', 'Home')
 @section('content')
     halo ini detail student <br>
@@ -25,4 +26,7 @@
             </td>
         </tbody>
     </table>
+    <div class="container d-flex justify-content-end">
+        <a class="btn btn-danger " href="/student">back</a>
+    </div>
 @endsection
