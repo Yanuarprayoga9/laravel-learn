@@ -12,6 +12,14 @@
             kelas {{ $studentList->class->name }}
         </li>
         <li>
+            @if ($studentList->gender == "male" || "Male")
+                laki-laki
+            @elseif ($studentList->gender == "female" || "Female")
+                perempuan
+            
+            @endif
+        </li>
+        <li>
             walikelas {{ $studentList->class->homeroomTeacher->name }}
         </li>
         <li>
