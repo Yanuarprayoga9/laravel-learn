@@ -8,6 +8,7 @@
             <tr>
                 <th>no</th>
                 <th>Kelas</th>
+                <th>detail</th>
                 {{-- <th>nama</th>
                 <th>Homeroom</th> --}}
             </tr>
@@ -23,7 +24,9 @@
                     @endforeach
                 </td> --}}
                 {{-- <td>{{ $data->homeroomTeacher['name'] }}</td> --}}
-
+                <td>
+                    <a href="class/{{ $data->id }}">detail</a>
+                </td>
         
             </tr>
             @endforeach
