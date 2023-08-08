@@ -18,6 +18,10 @@ use App\Http\Controllers\StudentController;
 */
 Route::prefix('student')->group(function () {
     Route::get('/student',[StudentController::class,'index']);
+    Route::get('/student/{id}',[StudentController::class,'show']);
+
+
+
     Route::get('/class', [ClassController::class, 'index']);
     Route::get('/extra',[ExtracurricularController::class,'index']);
     Route::get('/teacher',[TeacherController::class,'index']);

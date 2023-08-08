@@ -22,7 +22,7 @@
                         {{ $student->name }},
                     @endforeach
                 </td> --}}
-                <td>{{ $data->homeroomTeacher['name'] }}</td>
+                {{-- <td>{{ $data->homeroomTeacher['name'] }}</td> --}}
 
         
             </tr>
