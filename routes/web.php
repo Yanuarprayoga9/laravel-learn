@@ -18,6 +18,7 @@ use App\Http\Controllers\StudentController;
 */
     Route::get('student',[StudentController::class,'index']);
     Route::get('student/{id}',[StudentController::class,'show']);
+    Route::get('student-add',[StudentController::class,'add']);
 
 
 

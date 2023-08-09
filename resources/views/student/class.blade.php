@@ -2,7 +2,9 @@
 @section('title', 'class')
 @section('content')
     <h1>ini adalah page class</h1>
-   
+    <div class="my-5">
+        <a href="" class="btn btn-success">add data</a>
+    </div>
     <table class="table table-bordered">
         <thead>
             <tr>

@@ -24,6 +24,11 @@ class StudentController extends Controller
         $student = Student::with('class.homeroomTeacher','extracurriculars')->findOrFail($id);
         return view('student.student',['studentList'=>$student]);
     }
+    public function add()
+    {
+        //solve add function student
+        return view('student.student-add');
+    }
     
   
 }
