@@ -2,6 +2,9 @@
 @section('detail', 'extra')
 @section('title', 'extra')
 @section('content')
+<div class="my-5">
+    <a href="" class="btn btn-success">add data</a>
+</div>
    <h1>{{ $extraList->name }}</h1>
     <table class="table table-bordered">
         <thead>
