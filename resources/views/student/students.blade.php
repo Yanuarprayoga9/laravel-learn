@@ -2,7 +2,7 @@
 @section('title','Home')
 @section('content')
 <div class="my-5">
-    <a href="/student/add" class="btn btn-success">add data</a>
+    <a href="/student-add" class="btn btn-success">add data</a>
 </div>
 <table class="table table-bordered">
     <thead>

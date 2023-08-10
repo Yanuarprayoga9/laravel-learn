@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Database\Eloquent\Collection;
 use App\Models\Student;
+use App\Models\ClassRoom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Eloquent\Collection;
 
 class StudentController extends Controller
 {
@@ -24,10 +25,22 @@ class StudentController extends Controller
         $student = Student::with('class.homeroomTeacher','extracurriculars')->findOrFail($id);
         return view('student.student',['studentList'=>$student]);
     }
-    public function add()
+    public function create()
     {
         //solve add function student
-        return view('student.student-add');
+        $class = ClassRoom::select('id','name')->get(); 
+        return view('student.student-add',['class'=>$class]);
+    }
+    public function store(Request $request)
+    {
+        //solve add function student
+      
+        $student = new Student;
+        $student->name = $request->name;
+        $student->nis = $request->nis;
+        $student->gender = $request->gender;
+        $student->class_id = $request->class_id;
+        $student->save();
     }
     
   

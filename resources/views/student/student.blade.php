@@ -27,6 +27,6 @@
         </tbody>
     </table>
     <div class="container d-flex justify-content-end">
-        <a class="btn btn-danger " href="/student">back</a>
+        <a class="btn btn-danger " href="/">back</a>
     </div>
 @endsection
