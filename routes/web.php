@@ -16,10 +16,10 @@ use App\Http\Controllers\StudentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-    Route::get('student',[StudentController::class,'index']);
+    Route::get('',[StudentController::class,'index']);
     Route::get('student/{id}',[StudentController::class,'show']);
-    Route::get('student-add',[StudentController::class,'add']);
-
+    Route::get('student-add',[StudentController::class,'create']);
+    Route::post('studentsubmit',[StudentController::class,'store']);
 
 
     Route::get('/class', [ClassController::class, 'index']);

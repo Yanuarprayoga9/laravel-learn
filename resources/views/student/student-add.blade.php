@@ -2,22 +2,30 @@
 @section('title', 'Student || Add data')
 @section('content')
     <h1>Add data student</h1>
-    <form action="">
+    <form action="studentsubmit" method="POST">
+        @csrf
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">NIS</label>
-            <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="name">
+            <input type="number" class="form-control" id="exampleFormControlInput1" name="nis" placeholder="NIS">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">nama</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name">
+            <input type="text" class="form-control" name="name" id="exampleFormControlInput1" placeholder="name">
         </div>
         <div class="mb-3">
             <input type="radio"  name="gender" id="gender" value="male">laki-laki
             <input type="radio"  name="gender" id="gender" value="female">perempuan
         </div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
+
+
+        <select class="form-select" name="class_id" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            @foreach ($class as $item)
+             <option value="{{ $item->id }}">{{ $item->name }}</option>
+            @endforeach
+          </select>
+
+        
+        <input type="submit" class="btn btn-success">
     </form>
 @endsection
