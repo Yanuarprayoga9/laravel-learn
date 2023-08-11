@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ClassRoom;
+use App\Models\Student;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -51,4 +52,6 @@ class ClassController extends Controller
       return Redirect('/class');
 
    }
+
+
 }
