@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\ClassRoom;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class ClassController extends Controller
 {
@@ -29,6 +30,25 @@ class ClassController extends Controller
       $class->create($request->all());
 
       return redirect('/class')->with('message', 'Data kelas berhasil ditambahkan.');
+
+   }
+
+
+   public function editclass($id){
+      
+      $class = ClassRoom::findOrFail($id);
+      $teacher = Teacher::all();
+      return view('student.class-edit',['class'=>$class,'teacher'=>$teacher]);
+
+   }
+   public function updateclass(Request $request, $id){
+
+      $class = ClassRoom::findOrFail($id);
+      $class->update([
+         $class->name = $request->name,
+         $class->teacher_id = $request->teacher_id
+      ]);
+      return Redirect('/class');
 
    }
 }

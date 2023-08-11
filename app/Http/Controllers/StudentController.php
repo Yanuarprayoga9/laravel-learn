@@ -50,9 +50,34 @@ class StudentController extends Controller
     {
         //solve add function student
         $class = ClassRoom::select('id','name')->get(); 
-        $student = Student::get()->findOrFail($id);
+        $student = Student::findOrFail($id);
         return view('student.student-edit',['class'=>$class,'student'=>$student]);
     }
+
+
+    public function storeedit(Request $request, $id)
+{
+    // Validasi data yang dikirimkan dari form
+    $validatedData = $request->validate([
+        'nis' => 'required|numeric',
+        'name' => 'required|string|max:255',
+        'gender' => 'required|in:male,female',
+    ]);
+
+    // Cari dan perbarui data student berdasarkan ID
+    $student = Student::findOrFail($id);
+    $student->update([
+        'nis' => $validatedData['nis'],
+        'name' => $validatedData['name'],
+        'gender' => $validatedData['gender'],
+        'class_id' => $request->class_id,
+    ]);
+
+    // Redirect ke halaman yang sesuai setelah berhasil memperbarui
+    return redirect()->route('student.index')->with('success', 'Data siswa berhasil diperbarui.');
+}
+
+
     
   
 }
