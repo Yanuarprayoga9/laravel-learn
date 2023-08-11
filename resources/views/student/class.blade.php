@@ -28,6 +28,7 @@
                 {{-- <td>{{ $data->homeroomTeacher['name'] }}</td> --}}
                 <td>
                     <a href="class/{{ $data->id }}">detail</a>
+                    <a href="class-edit/{{ $data->id }}">edit</a>
                 </td>
         
             </tr>
