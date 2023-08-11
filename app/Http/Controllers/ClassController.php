@@ -22,7 +22,7 @@ class ClassController extends Controller
     return view('student.class-add',['teacher'=>$teacher]);
    }
    public function store(Request $request){
-      // $class = new ClassRoom;
+      $class = new ClassRoom;
       // $class->name = $request->name;
       // $class->teacher_id = $request->teacher_id;
       // $class->save();
