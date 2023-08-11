@@ -41,6 +41,8 @@ class StudentController extends Controller
         $student->gender = $request->gender;
         $student->class_id = $request->class_id;
         $student->save();
+        return redirect('/')->with('message', 'Data siswa berhasil ditambahkan.');
+
     }
     
   

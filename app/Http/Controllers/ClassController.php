@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ClassRoom;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class ClassController extends Controller
@@ -15,5 +16,19 @@ class ClassController extends Controller
    public function show($id){
     $class = ClassRoom::with('students','homeroomTeacher')->findOrFail($id);
     return view('student.classDetails',['class'=>$class]);
+   }
+   public function create(){
+   $teacher = Teacher::select('name','id')->get();
+    return view('student.class-add',['teacher'=>$teacher]);
+   }
+   public function store(Request $request){
+      // $class = new ClassRoom;
+      // $class->name = $request->name;
+      // $class->teacher_id = $request->teacher_id;
+      // $class->save();
+      $class->create($request->all());
+
+      return redirect('/class')->with('message', 'Data kelas berhasil ditambahkan.');
+
    }
 }
