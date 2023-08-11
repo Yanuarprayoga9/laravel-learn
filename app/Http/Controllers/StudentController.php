@@ -6,6 +6,7 @@ use App\Models\Student;
 use App\Models\ClassRoom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Database\Eloquent\Collection;
 
 class StudentController extends Controller
@@ -42,7 +43,11 @@ class StudentController extends Controller
         $student->gender = $request->gender;
         $student->class_id = $request->class_id;
         $student->save();
-        return redirect('/')->with('message', 'Data siswa berhasil ditambahkan.');
+        if($student){
+            Session::flash('status','success');
+            Session::flash('message','add new student success!');
+        }
+        return redirect('/students')->with('message', 'Data siswa berhasil ditambahkan.');
 
     }
 
@@ -76,7 +81,10 @@ class StudentController extends Controller
     // Redirect ke halaman yang sesuai setelah berhasil memperbarui
     return redirect()->route('student.index')->with('success', 'Data siswa berhasil diperbarui.');
 }
-
+public function deleteStudent($id){
+    Student::findOrFail($id)->delete();
+    return Redirect('students');
+ }
 
     
   

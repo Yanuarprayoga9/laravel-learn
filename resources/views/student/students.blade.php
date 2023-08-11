@@ -4,6 +4,11 @@
 <div class="my-5">
     <a href="/student-add" class="btn btn-success">add data</a>
 </div>
+@if (Session::has('status'))
+<div class="alert alert-success" role="alert">
+    {{ Session::get('status') }}  </div>
+    
+@endif
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -40,10 +45,27 @@
                 <a href="student-edit/{{ $item->id }}" class="btn btn-warning">
                     edit
                 </a>
+                {{-- <a href="student-delete/{{ $item->id }}" class="btn btn-warning">
+                    delete
+                </a> --}}
+                <form action="student-delete/{{ $item->id }}" method="POST">
+                @csrf
+                @method('delete')
+                    <button class="btn btn-danger" type="submit" onclick="confirmDelete({{ $item->id }})">
+                        delete
+                    </button>
+            </form>
             </td>
         </tr>
         @endforeach
     </tbody>
 
 </table>
+<script>
+    function confirmDelete(studentId) {
+        if (confirm('Apakah Anda yakin ingin menghapus mahasiswa ini?')) {
+            document.getElementById('delete-form-' + studentId).submit();
+        }
+    }
+    </script>
 @endsection
