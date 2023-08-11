@@ -31,6 +31,7 @@ class StudentController extends Controller
         $class = ClassRoom::select('id','name')->get(); 
         return view('student.student-add',['class'=>$class]);
     }
+
     public function store(Request $request)
     {
         //solve add function student
@@ -43,6 +44,14 @@ class StudentController extends Controller
         $student->save();
         return redirect('/')->with('message', 'Data siswa berhasil ditambahkan.');
 
+    }
+
+    public function edit($id)
+    {
+        //solve add function student
+        $class = ClassRoom::select('id','name')->get(); 
+        $student = Student::get()->findOrFail($id);
+        return view('student.student-edit',['class'=>$class,'student'=>$student]);
     }
     
   

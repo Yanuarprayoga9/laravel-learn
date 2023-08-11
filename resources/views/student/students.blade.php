@@ -37,6 +37,9 @@
                 <a href="student/{{ $item->id }}" class="btn btn-warning">
                     detail
                 </a>
+                <a href="student-edit/{{ $item->id }}" class="btn btn-warning">
+                    edit
+                </a>
             </td>
         </tr>
         @endforeach

@@ -21,6 +21,9 @@ use App\Http\Controllers\StudentController;
     Route::get('student-add',[StudentController::class,'create']);
     Route::post('studentsubmit',[StudentController::class,'store']);
 
+    //Edit
+    Route::get('student-edit',[StudentController::class,'edit']);
+
 
     Route::get('/class', [ClassController::class, 'index']);
     Route::get('/class/{id}', [ClassController::class, 'show']);
