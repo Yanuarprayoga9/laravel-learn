@@ -13,6 +13,9 @@ class ClassRoom extends Model
 {
     use HasFactory;
     protected $table = 'class';
+    protected $fillable = [
+        'name','teacher_id'
+    ];
     // protected static $factory = ClassFactory::class;
     public function students(): HasMany
     {

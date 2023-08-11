@@ -24,6 +24,8 @@ use App\Http\Controllers\StudentController;
 
     Route::get('/class', [ClassController::class, 'index']);
     Route::get('/class/{id}', [ClassController::class, 'show']);
+    Route::get('/class-add', [ClassController::class, 'create']);
+    Route::post('classsubmit', [ClassController::class, 'store']);
 
     Route::get('/extra',[ExtracurricularController::class,'index']);
     Route::get('/extra/{id}',[ExtracurricularController::class,'show']);
