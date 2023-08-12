@@ -101,6 +101,17 @@ DB::table('users')->where('id', 1)->delete();
  -->
 
 
-# many to many
-belongsto many
-test github issues
+### show error validate
+ @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>
+                            {{ $error }}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+  @endif
+### membuat validasi external
+php artisan make:request StudentCreateRequest

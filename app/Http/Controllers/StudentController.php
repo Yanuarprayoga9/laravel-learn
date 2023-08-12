@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StudentCreateRequest;
 use App\Models\Student;
 use App\Models\ClassRoom;
 use Illuminate\Http\Request;
@@ -33,28 +34,19 @@ class StudentController extends Controller
         return view('student.student-add',['class'=>$class]);
     }
 
-    public function store(Request $request)
+    
+    public function store(StudentCreateRequest $request)
     {
+        
         //solve add function student
-        $validated =  $request->validate([
-            'nis'=>'unique:students'
-        ]);
        
-        if($validated){
 
             $student = Student::create(($request->all()));
             if($student){
                 Session::flash('status','success');
                 Session::flash('message','add new student success!');
             }
-        }
-        // $student = new Student;
-        // $student->name = $request->name;
-        // $student->nis = $request->nis;
-        // $student->gender = $request->gender;
-        // $student->class_id = $request->class_id;
-        // $student->save();
-        return redirect()->back()->withErrors($validated)->withInput();
+        return redirect('/students');
 
     }
 

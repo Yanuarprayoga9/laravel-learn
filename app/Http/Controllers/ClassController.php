@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ClassRoom;
 use App\Models\Student;
 use App\Models\Teacher;
+use App\Models\ClassRoom;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 
 class ClassController extends Controller
@@ -24,13 +25,22 @@ class ClassController extends Controller
     return view('student.class-add',['teacher'=>$teacher]);
    }
    public function store(Request $request){
-      $class = new ClassRoom;
+      // $class = new ClassRoom;
       // $class->name = $request->name;
       // $class->teacher_id = $request->teacher_id;
       // $class->save();
-      $class->create($request->all());
-
-      return redirect('/class')->with('message', 'Data kelas berhasil ditambahkan.');
+      $validated = $request->validate([
+         'name' => 'unique:class' 
+      ]);
+      if($validated){
+         $class = ClassRoom::create($request->all());
+         if($class){
+            Session::flash(
+               'status' , 'success'
+            );
+         }
+      }
+      return redirect()->back()->withErrors($validated)->withInput();
 
    }
 
@@ -52,6 +62,7 @@ class ClassController extends Controller
       return Redirect('/class');
 
    }
+
 
 
 }
