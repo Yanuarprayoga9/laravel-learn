@@ -85,6 +85,26 @@ public function deleteStudent($id){
     return Redirect('students');
  }
 
+
+ public function deleteRStudent($id){
+    $student = Student::findOrFail($id);
+    return view('student.student-delete',['student'=>$student]);
+ }
+ public function destroyRStudent($id){
+     $student = Student::findOrFail($id);
+     $student->delete();
+     if($student){
+        Session::flash(
+            'statusdelete','sukse menghapus data'
+        );
+        return Redirect('students');
+     }else{
+        Session::flash(
+            'status','gagal menghapus data'
+        );
+     }
+ }
+
     
   
 }

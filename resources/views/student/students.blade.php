@@ -1,14 +1,21 @@
 @extends('layouts.components.MainLayout')
 @section('title','Home')
 @section('content')
-<div class="my-5">
+<div class="  my-5  d-flex justify-content-between">
     <a href="/student-add" class="btn btn-success">add data</a>
+    <a href="" class="btn btn-info">show deleted data</a>
 </div>
 @if (Session::has('status'))
 <div class="alert alert-success" role="alert">
     {{ Session::get('status') }}  </div>
     
 @endif
+@if (Session::has('statusdelete'))
+<div class="alert alert-success" role="alert">
+    {{ Session::get('statusdelete') }}  </div>
+    
+@endif
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -45,6 +52,9 @@
                 <a href="student-edit/{{ $item->id }}" class="btn btn-warning">
                     edit
                 </a>
+                <a href="student-deleteR/{{ $item->id }}" class="btn btn-danger">
+                    deleteR
+                </a>
                 {{-- <a href="student-delete/{{ $item->id }}" class="btn btn-warning">
                     delete
                 </a> --}}
@@ -62,10 +72,24 @@
 
 </table>
 <script>
-    function confirmDelete(studentId) {
-        if (confirm('Apakah Anda yakin ingin menghapus mahasiswa ini?')) {
-            document.getElementById('delete-form-' + studentId).submit();
+   function confirmDelete(studentId) {
+    const confirmD = new Promise((resolve, reject) => {
+        const confirmation = confirm('Apakah Anda yakin ingin menghapus mahasiswa ini?');
+        if (confirmation) {
+            resolve();
+        } else {
+            reject();
         }
-    }
+    });
+
+    confirmD.then(() => {
+        document.getElementById('delete-form-' + studentId).submit();
+    }).catch(() => {
+    });
+}
+
+    setTimeout(function() {
+            document.querySelector('.alert').style.display = 'none';
+        }, 3000); 
     </script>
 @endsection

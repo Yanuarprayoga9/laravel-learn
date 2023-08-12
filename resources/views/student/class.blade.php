@@ -29,6 +29,7 @@
                 <td>
                     <a href="class/{{ $data->id }}">detail</a>
                     <a href="class-edit/{{ $data->id }}">edit</a>
+                    <a href="class-delete/{{ $data->id }}">edit</a>
                 </td>
         
             </tr>

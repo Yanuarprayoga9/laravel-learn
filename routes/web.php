@@ -25,6 +25,9 @@ use App\Http\Controllers\StudentController;
     Route::get('student-edit/{id}',[StudentController::class,'edit']);
     Route::put('student-edit/editstudent/{id}',[StudentController::class,'storeedit']);
     Route::delete('student-delete/{id}',[StudentController::class,'deleteStudent']);
+    //delete with redirect
+    Route::get('student-deleteR/{id}',[StudentController::class,'deleteRStudent']);
+    Route::get('student-deleteR/student-destroy/{id}',[StudentController::class,'destroyRStudent']);
 
 
     Route::get('/class', [ClassController::class, 'index']);
