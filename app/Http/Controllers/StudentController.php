@@ -36,18 +36,25 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //solve add function student
-      
-        $student = new Student;
-        $student->name = $request->name;
-        $student->nis = $request->nis;
-        $student->gender = $request->gender;
-        $student->class_id = $request->class_id;
-        $student->save();
-        if($student){
-            Session::flash('status','success');
-            Session::flash('message','add new student success!');
+        $validated =  $request->validate([
+            'nis'=>'unique:students'
+        ]);
+       
+        if($validated){
+
+            $student = Student::create(($request->all()));
+            if($student){
+                Session::flash('status','success');
+                Session::flash('message','add new student success!');
+            }
         }
-        return redirect('/students')->with('message', 'Data siswa berhasil ditambahkan.');
+        // $student = new Student;
+        // $student->name = $request->name;
+        // $student->nis = $request->nis;
+        // $student->gender = $request->gender;
+        // $student->class_id = $request->class_id;
+        // $student->save();
+        return redirect()->back()->withErrors($validated)->withInput();
 
     }
 
