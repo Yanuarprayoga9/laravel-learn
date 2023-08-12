@@ -21,9 +21,9 @@
 ### php artisan migrate:fresh
 ### php artisan migrate:fresh --seed
 ## Migrate database
-1. create table php = artisan make:migration create_flights_table
-2. add column php = artisan make:migration add_column_to_students_table 
-3. The migrate:fresh command will drop all tables from the database and then execute the migrate command:
+create table php = artisan make:migration create_flights
+add column php = artisan make:migration add_column_to_students_table 
+The migrate:fresh command will drop all tables from the database and then execute the migrate command:
 
 ## RELASI DB
 php artisan make:migration add_class_id_colum_to_students_table (membuat relasi id class ke tabel students )
@@ -101,17 +101,6 @@ DB::table('users')->where('id', 1)->delete();
  -->
 
 
-### show error validate
- @if ($errors->any())
-            <div class="alert alert-danger" role="alert">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>
-                            {{ $error }}
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
-  @endif
-### membuat validasi external
-php artisan make:request StudentCreateRequest
+# many to many
+belongsto many
+test github issues
