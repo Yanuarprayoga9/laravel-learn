@@ -17,7 +17,7 @@ class StudentController extends Controller
     {
         
         // $student = Student::with('class.homeroomTeacher','extracurriculars')->get();
-        $student = Student::get();
+        $student = Student::simplePaginate(10);
         return view('student.students',['studentList'=>$student]);
     }
     public function show($id)
@@ -105,6 +105,12 @@ public function deleteStudent($id){
      }
  }
 
-    
+public function deletedStudent(){
+    $studentTrash = Student::onlyTrashed()->get();
+    return view('student.student-deleted',['studentTrash'=>$studentTrash]);
+}
+public function restoreStudent($id){
+   Student::withTrashed()->where('id',$id)->restore();
+}
   
 }

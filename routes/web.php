@@ -28,6 +28,8 @@ use App\Http\Controllers\StudentController;
     //delete with redirect
     Route::get('student-deleteR/{id}',[StudentController::class,'deleteRStudent']);
     Route::get('student-deleteR/student-destroy/{id}',[StudentController::class,'destroyRStudent']);
+    Route::get('student-deleted',[StudentController::class,'deletedStudent']);
+    Route::get('student/{id}/restore',[StudentController::class,'restoreStudent']);
 
 
     Route::get('/class', [ClassController::class, 'index']);
