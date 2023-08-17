@@ -13,11 +13,11 @@ use Illuminate\Database\Eloquent\Collection;
 class StudentController extends Controller
 {
     //
-    public function index()
+    public function index(Request $request)
     {
-        
+        $keyword = $request->keyword;
         // $student = Student::with('class.homeroomTeacher','extracurriculars')->get();
-        $student = Student::simplePaginate(10);
+        $student = Student::where('name','LIKE','%'.$keyword.'%')->paginate(10);
         return view('student.students',['studentList'=>$student]);
     }
     public function show($id)

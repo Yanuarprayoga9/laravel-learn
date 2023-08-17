@@ -26,7 +26,12 @@
         <div class="alert alert-success" role="alert">
             {{ Session::get('statusdelete') }} </div>
     @endif
-
+    <form action="" method="get">
+        <div class="input-group mb-3 w-50">
+            <input type="text" class="form-control" placeholder="name or anything" name="keyword" aria-label="Username" aria-describedby="basic-addon1">
+            <button class="input-group-text btn btn-outline-success" id="basic-addon1" type="submit">search</button>
+          </div>  
+    </form>
     <table class="table table-bordered">
         <thead>
             <tr>
