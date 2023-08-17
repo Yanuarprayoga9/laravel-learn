@@ -2,6 +2,15 @@
 @section('title', 'Student || Add data')
 @section('content')
     <h1>Add data student</h1>
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     <form action="editstudent/{{ $student->id }}" method="POST">
         @csrf
         @method('PUT')

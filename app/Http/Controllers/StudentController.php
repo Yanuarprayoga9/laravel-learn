@@ -70,15 +70,21 @@ class StudentController extends Controller
 
     // Cari dan perbarui data student berdasarkan ID
     $student = Student::findOrFail($id);
-    $student->update([
+   if($validatedData){
+     $student->update([
         'nis' => $validatedData['nis'],
         'name' => $validatedData['name'],
         'gender' => $validatedData['gender'],
         'class_id' => $request->class_id,
     ]);
+    Session::flash(
+        'statusUpdate','data berhasil diperbaharui'
+    );
+    return redirect('/students');
+}
+    return redirect();
 
     // Redirect ke halaman yang sesuai setelah berhasil memperbarui
-    return redirect()->route('student.index')->with('success', 'Data siswa berhasil diperbarui.');
 }
 public function deleteStudent($id){
     Student::findOrFail($id)->delete();

@@ -3,7 +3,12 @@
 @section('content')
     <div class="  my-5  d-flex justify-content-between">
         <a href="/student-add" class="btn btn-success">add data</a>
-        <div class="trash">
+        <div class="action ">
+            <div class="seacrh">
+               <form action="" method="get">
+                
+               </form>
+            </div>
             <a href="/student-deleted" class="btn btn-info">show deleted
                 data
             </a>
@@ -12,6 +17,10 @@
     @if (Session::has('status'))
         <div class="alert alert-success" role="alert">
             {{ Session::get('status') }} </div>
+    @endif
+    @if (Session::has('statusUpdate'))
+        <div class="alert alert-success" role="alert">
+            {{ Session::get('statusUpdate') }} </div>
     @endif
     @if (Session::has('statusdelete'))
         <div class="alert alert-success" role="alert">
