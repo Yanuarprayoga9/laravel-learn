@@ -101,6 +101,5 @@ DB::table('users')->where('id', 1)->delete();
  -->
 
 
-# many to many
-belongsto many
-test github issues
+## search method 
+        $student = Student::where('name','LIKE','%'.$keyword.'%')->paginate(10);
