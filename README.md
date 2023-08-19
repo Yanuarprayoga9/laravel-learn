@@ -111,7 +111,7 @@ DB::table('users')->where('id', 1)->delete();
             $request->file('photo')->storeAs('photo', $newName);
         }
 3. public disk = php artisan storage:link
-4. to show         <img src="{{ asset('storage/photo/'.$studentList->image) }}" alt="" style="width: 100px; height:100px;" class="mx-auto d-block">
+4. to show         <img sc="{{ asset('storage/photo/'.$studentList->image) }}" alt="" style="width: 100px; height:100px;" class="mx-auto d-block">
 5. 
 
 
