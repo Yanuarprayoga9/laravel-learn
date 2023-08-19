@@ -103,3 +103,20 @@ DB::table('users')->where('id', 1)->delete();
 
 ## search method 
         $student = Student::where('name','LIKE','%'.$keyword.'%')->paginate(10);
+# upload foto 
+1. kita harus mengganti file systems 
+2.   if ($request->file('photo')) {
+            $extension  = $request->file('photo')->getClientOriginalExtension();
+            $newName = $request->name . '-' . now()->timestamp . '.' . $extension;
+            $request->file('photo')->storeAs('photo', $newName);
+        }
+3. public disk = php artisan storage:link
+4. to show         <img src="{{ asset('storage/photo/'.$studentList->image) }}" alt="" style="width: 100px; height:100px;" class="mx-auto d-block">
+5. 
+
+
+## middleware
+php artisan make:model Role
+$ php artisan make:migration add_role_id_column_to_users_table;
+
+### akun admin

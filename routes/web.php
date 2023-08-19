@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\ClassController;
-use App\Http\Controllers\ExtracurricularController;
-use App\Http\Controllers\TeacherController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ClassController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\TeacherController;
+use App\Http\Controllers\ExtracurricularController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +17,9 @@ use App\Http\Controllers\StudentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-    Route::get('students',[StudentController::class,'index']);
+    Route::get('/login',[AuthController::class,'index'])->name('login');
+
+    Route::get('students',[StudentController::class,'index'])->middleware('auth');
     Route::get('student/{id}',[StudentController::class,'show']);
     Route::get('student-add',[StudentController::class,'create']);
     Route::post('studentsubmit',[StudentController::class,'store']);
