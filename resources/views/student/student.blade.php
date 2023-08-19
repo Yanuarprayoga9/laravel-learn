@@ -2,8 +2,19 @@
 @section('detail', 'Student')
 @section('title', 'Home')
 @section('content')
-    halo ini detail student <br>
-    <h1 class="text-primary">{{ $studentList->name }}</h1>
+<div class=" container text-center">
+        halo ini detail student <br>
+        <h1 class="text-primary">{{ $studentList->name }}</h1>
+        @if ($studentList->image != '' )
+        <img src="{{ asset('storage/photo/'.$studentList->image) }}" alt="" style="width: 100px; height:100px;" class="mx-auto d-block">
+            
+        @else
+        <img src="https://picsum.photos/200" alt="" style="width: 100px; height:100px;" class="mx-auto d-block">
+
+        
+        @endif
+    </div>
+    {{ $studentList->image }}
     <table class="table table-bordered">
         <thead>
             <th>no</th>
@@ -27,6 +38,6 @@
         </tbody>
     </table>
     <div class="container d-flex justify-content-end">
-        <a class="btn btn-danger " href="/">back</a>
+        <a class="btn btn-danger " href="/students">back</a>
     </div>
 @endsection

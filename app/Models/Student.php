@@ -14,7 +14,7 @@ class Student extends Model
     use HasFactory;
     use SoftDeletes;
     protected $fillable = [
-        'name','gender','nis','class_id'
+        'name','gender','nis','class_id','image'
     ];
     public function class(): BelongsTo
     {

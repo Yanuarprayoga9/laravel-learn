@@ -2,7 +2,7 @@
 @section('title', 'Student || Add data')
 @section('content')
     <h1>Add data student</h1>
-    <form action="studentsubmit" method="POST">
+    <form action="studentsubmit" method="POST" enctype="multipart/form-data">
         @csrf
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">
@@ -32,14 +32,17 @@
         </div>
 
 
-        <select class="form-select" name="class_id" aria-label="Default select example">
+        <select class="form-select mb-3" name="class_id" aria-label="Default select example">
             <option selected>Open this select menu</option>
             @foreach ($class as $item)
                 <option value="{{ $item->id }}">{{ $item->name }}</option>
             @endforeach
         </select>
 
-
+        <div class="input-group mb-3">
+            <input type="file" class="form-control" id="photo" name="photo">
+            <label class="input-group-text" for="photo" >Upload</label>
+          </div>
         <input type="submit" class="btn btn-success">
     </form>
 @endsection

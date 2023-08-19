@@ -39,6 +39,7 @@
                 <th>nama</th>
                 <th>Nis</th>
                 <th>gender</th>
+                <th>class</th>
                 <th>opsi</th>
                 {{-- <th>Kelas id</th>
             <th>Kelas</th>
@@ -53,6 +54,7 @@
                     <td>{{ $item['name'] }}</td>
                     <td>{{ $item['nis'] }}</td>
                     <td>{{ $item['gender'] }}</td>
+                    <td>{{ $item->class->name }}</td>
                     {{-- <td>{{ $item['class_id'] }}</td>
             <td>{{ $item->class['name'] }}</td>
             <td>
@@ -87,7 +89,7 @@
         </tbody>
     </table>
  <div class="my-5">
-    {{ $studentList->links() }}
+    {{ $studentList->withQueryString()->links() }}
  </div>
 @endsection
 
