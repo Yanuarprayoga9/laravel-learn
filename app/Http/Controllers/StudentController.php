@@ -20,7 +20,7 @@ class StudentController extends Controller
         $student = Student::with('class')->where('name', 'LIKE', '%' . $keyword . '%')->orWhere('nis', 'LIKE', '%' . $keyword . '%')->orWhereHas('class', function ($query) use ($keyword) {
                 $query->where('name', 'LIKE', '%' . $keyword . '%');
             })
-            ->paginate(10);
+            ->simplePaginate(10);
         return view('student.students', ['studentList' => $student]);
     }
     public function show($id)
