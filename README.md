@@ -99,8 +99,6 @@ Delete a user
 DB::table('users')->where('id', 1)->delete();
 
  -->
-
-
 ## search method 
         $student = Student::where('name','LIKE','%'.$keyword.'%')->paginate(10);
 # upload foto 

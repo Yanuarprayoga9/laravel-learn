@@ -24,7 +24,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="student">student</a>
+                        <a class="nav-link" href="students">student</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="class">class</a>
@@ -38,10 +38,7 @@
 
 
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
+                <a href="logout">logout</a>
             </div>
         </div>
     </nav>
